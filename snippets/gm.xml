@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="pos-gm"
+           fetch="https://github.com/pos-gm"
+           revision="thirteen" />
+
+  <remote  name="gm"
+           fetch="https://github.com/GustavoMends"
+           revision="thirteen" />
+
+  <remote name="pixel-gm"
+          fetch="https://github.com/pe-gm"
+          revision="thirteen" />
+
+  <remote name="kei"
+          fetch="https://gitlab.com/kei-space"
+          revision="thirteen" />
+
+  <!-- Build -->
+  <project path="build/make" name="build" groups="pdk" remote="pos-gm">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- Frameworks -->
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="pos-gm" />
+  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="pos-gm" />
+
+  <!-- Hardware -->
+  <project path="hardware/xiaomi" name="hardware_xiaomi" remote="gm" />
+
+  <!-- Packages -->
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="pos-gm" />
+  <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="gm" />
+  <project path="packages/apps/KProfiles" name="KProfiles" remote="gm" />
+  <project path="packages/apps/Matlog" name="packages_apps_Matlog" remote="pixel-gm" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="pos-gm" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86/clang-r487747c" name="clang-r487747c" clone-depth="1" remote="kei" />
+
+  <!-- Vendor -->
+  <project path="vendor/aosp" name="vendor_aosp" remote="pos-gm" />
+  <project path="vendor/google/pixel" name="vendor_google_pixel" remote="pos-gm"/>
+  <project path="vendor/pixel-framework" name="vendor_pixel-framework" remote="pos-gm" />
+</manifest>

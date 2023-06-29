@@ -17,15 +17,6 @@
   <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="PixelOS" />
 
   <!-- Build -->
-  <project path="build/make" name="build" groups="pdk" remote="PixelOS">
-    <copyfile src="core/root.mk" dest="Makefile" />
-    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
-    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
-    <linkfile src="core" dest="build/core" />
-    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
-    <linkfile src="target" dest="build/target" />
-    <linkfile src="tools" dest="build/tools" />
-  </project>
   <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="PixelOS">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
@@ -36,8 +27,6 @@
 
   <!-- Frameworks -->
   <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="PixelOS" />
-  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
-  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="PixelOS" />
   <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="PixelOS" />
 
   <!-- Hardware -->
@@ -45,12 +34,10 @@
 
   <!-- Packages -->
   <project path="packages/apps/Nfc" name="packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="PixelOS" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="PixelOS" />
   <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" groups="pdk" remote="PixelOS" />
   <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
   <project path="packages/modules/Permission" name="packages_modules_Permission" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
   <project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
-  <project path="packages/services/Telecomm" name="packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
 
   <!-- System -->
   <project path="system/core" name="system_core" groups="pdk" remote="PixelOS" />
@@ -71,9 +58,6 @@
   <project path="packages/apps/Updates" name="packages_apps_Updates" remote="PixelOS" />
 
   <!-- Vendor -->
-  <project path="vendor/aosp" name="vendor_aosp" remote="PixelOS" />
   <project path="vendor/custom-preference" name="vendor_custom-preference" remote="PixelOS" />
   <project path="vendor/google/gms" name="vendor_google_gms" clone-depth="1" remote="PixelOS-Gitlab" />
-  <project path="vendor/google/pixel" name="vendor_google_pixel" remote="PixelOS"/>
-  <project path="vendor/pixel-framework" name="vendor_pixel-framework" remote="PixelOS" />
 </manifest>

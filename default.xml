@@ -1196,4 +1196,5 @@
   <include name="snippets/remove.xml" />
   <include name="snippets/external.xml" />
   <include name="snippets/custom.xml" />
+  <include name="snippets/gm.xml" />
 </manifest>
