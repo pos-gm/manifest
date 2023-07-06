@@ -43,6 +43,7 @@
   <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="pos-gm" />
 
   <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86/clang-neutron" name="clang-neutron" clone-depth="1" remote="kei" />
   <project path="prebuilts/clang/host/linux-x86/clang-r487747c" name="clang-r487747c" clone-depth="1" remote="kei" />
   <project path="prebuilts/clang/host/linux-x86/clang-r498229" name="clang-r498229" clone-depth="1" remote="kei" />
 
