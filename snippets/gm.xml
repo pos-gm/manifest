@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="pos-gm"
+           fetch="https://github.com/pos-gm"
+           revision="fourteen-qpr1" />
+
+  <!-- Build -->
+  <project path="build/make" name="build" remote="pos-gm">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- Device -->
+  <project path="device/lineage/sepolicy" name="device_lineage_sepolicy" remote="pos-gm" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/base" name="frameworks_base" remote="pos-gm" />
+
+  <!-- Hardware -->
+  <project path="hardware/xiaomi" name="hardware_xiaomi" remote="pos-gm" />
+
+  <!-- Packages -->
+  <!--project path="packages/apps/GameSpace" name="packages_apps_GameSpace" remote="pos-gm"-->
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="pos-gm" />
+  <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="pos-gm" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86/clang-r498229b" name="kei-space/clang-r498229b" clone-depth="1" revision="master" remote="gitlab" />
+
+  <!-- Vendor -->
+  <project path="vendor/aosp" name="vendor_aosp" remote="pos-gm" />
+  <project path="vendor/aosp/translations" name="kei-space/translations" revision="pixelos-fourteen" remote="gitlab" />
+</manifest>
