@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="kei"
+           fetch="https://gitlab.com/kei-space/pixelos"
+           revision="fourteen" />
+
+  <remote  name="pixelos-gm"
+           fetch="https://github.com/pos-gm"
+           revision="fourteen" />
+
+  <!-- Build -->
+  <project path="build/make" name="build" groups="pdk" remote="pixelos-gm">
+    <linkfile dest="build/CleanSpec.mk" src="CleanSpec.mk" />
+    <linkfile dest="build/buildspec.mk.default" src="buildspec.mk.default" />
+    <linkfile dest="build/core" src="core" />
+    <linkfile dest="build/envsetup.sh" src="envsetup.sh" />
+    <linkfile dest="build/target" src="target" />
+    <linkfile dest="build/tools" src="tools" />
+  </project>
+
+  <!-- Frameworks -->
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="pixelos-gm" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="pixelos-gm" />
+  <project path="packages/overlays/ThemeIcons" name="packages_overlays_ThemeIcons" remote="pixelos-gm" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86/clang-r522817" name="kei-space/clang/r522817" clone-depth="1" revision="master" remote="gitlab" />
+  <project path="prebuilts/clang/host/linux-x86/clang-r536225" name="kei-space/clang/r536225" clone-depth="1" revision="master" remote="gitlab" />
+
+  <!-- Vendor -->
+  <project path="vendor/aosp" name="vendor_aosp" remote="pixelos-gm" />
+  <project path="vendor/aosp/extras" name="vendor_extras" remote="kei" />
+  <project path="vendor/aosp/translations" name="translations" remote="kei" />
+  <project path="vendor/gms" name="vendor_gms" clone-depth="1" remote="kei" />
+
+</manifest>

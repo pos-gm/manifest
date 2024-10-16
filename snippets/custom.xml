@@ -17,14 +17,6 @@
   <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="PixelOS" />
 
   <!-- Build -->
-  <project path="build/make" name="build" groups="pdk" remote="PixelOS">
-    <linkfile dest="build/CleanSpec.mk" src="CleanSpec.mk" />
-    <linkfile dest="build/buildspec.mk.default" src="buildspec.mk.default" />
-    <linkfile dest="build/core" src="core" />
-    <linkfile dest="build/envsetup.sh" src="envsetup.sh" />
-    <linkfile dest="build/target" src="target" />
-    <linkfile dest="build/tools" src="tools" />
-  </project>
   <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="PixelOS">
     <linkfile dest="Android.bp" src="root.bp" />
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
@@ -37,15 +29,14 @@
 
   <!-- Frameworks -->
   <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="PixelOS" />
-  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
   <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="PixelOS" />
   <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="PixelOS" />
 
   <!-- Hardware -->
   <project path="hardware/google/pixel-sepolicy" name="hardware_google_pixel-sepolicy" groups="generic_fs,pixel" remote="PixelOS" />
+  <project path="hardware/xiaomi" name="hardware_xiaomi" remote="PixelOS" />
 
   <!-- Packages -->
-  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="PixelOS" />
   <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk" remote="PixelOS" />
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="PixelOS" />
 
@@ -65,8 +56,6 @@
   <project path="packages/apps/Updates" name="packages_apps_Updates" remote="PixelOS" />
 
   <!-- Vendor -->
-  <project path="vendor/aosp" name="vendor_aosp" remote="PixelOS" />
   <project path="vendor/custom-preference" name="vendor_custom-preference" remote="PixelOS" />
-  <project path="vendor/gms" name="vendor_gms" clone-depth="1" remote="PixelOS-Gitlab" />
 
 </manifest>
